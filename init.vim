@@ -10,6 +10,19 @@ set runtimepath+=/host/home/yanai-lab/Sotsuken20/honbu-y/.local/share/nvim/runti
 :set softtabstop=4
 :set mouse=a
 
+"terminal
+nnoremap <silent> tx <cmd>belowright new<CR><cmd>terminal<CR>
+autocmd TermOpen * :startinsert
+autocmd TermOpen * setlocal norelativenumber
+autocmd TermOpen * setlocal nonumber
+tnoremap <Esc> <C-\><C-n> 
+autocmd WinEnter * if &buftype ==# 'terminal' | startinsert | endif  " autoinsert mode
+
+" alt+j change window
+noremap  <A-j> <C-w>w
+inoremap <A-j> <Esc><C-w>w
+tnoremap <A-j> <C-\><C-n><C-w>wi
+
 call plug#begin("~/.config/nvim/plugged")
 Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
 Plug 'https://github.com/preservim/nerdtree' " NerdTree
@@ -22,11 +35,16 @@ Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
 Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
-Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation"Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
+Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
+Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
+
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " Markdown Preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' } " Markdown Preview
 
 set encoding=UTF-8
-
 call plug#end()
+
+
 
 "coc keybind
 inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
