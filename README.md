@@ -5,6 +5,12 @@
 coc.nvimをつかうからnodejs>=14.14が必要    
 :::  
 
+### CocInstallしたもの(ts, python)  
+coc-pyright   
+coc-tsserver  
+  
+
+
 ### メインで使うショートカット  
 tx: terminal起動  
 alt+j: ウィンドウ移動  
