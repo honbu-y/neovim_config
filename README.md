@@ -1,6 +1,13 @@
 # NeoVim config for me  
 
+##vim-plugのintall
+cd ~/.config/nvim/init.vim を書く
+:PlugInstall
 
+
+## coc.vim の使い方 
+cd ~/.config/nvim/plugged/coc.nvim
+yarn install
 
 ## CocInstallしたもの(ts, python)  
 > **Warning**  

@@ -9,6 +9,8 @@ set runtimepath+=/host/home/yanai-lab/Sotsuken20/honbu-y/.local/share/nvim/runti
 :set smarttab
 :set softtabstop=4
 :set mouse=a
+syntax enable
+
 
 "terminal
 nnoremap <silent> tx <cmd>belowright new<CR><cmd>terminal<CR>
@@ -41,11 +43,21 @@ Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple c
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " Markdown Preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' } " Markdown Preview
 
+"Python debug
+Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'mfussenegger/nvim-dap-python'
+
+
+
+" check Image !!dont work
+" Plug 'nvim-lua/popup.nvim'
+" Plug 'nvim-lua/plenary.nvim'
+" Plug 'nvim-telescope/telescope.nvim'
+" Plug 'nvim-telescope/telescope-media-files.nvim'
+
 set encoding=UTF-8
 call plug#end()
-
-
-
 "coc keybind
 inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
