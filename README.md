@@ -1,8 +1,8 @@
 # NeoVim config for me  
 
-##vim-plugのintall
-cd ~/.config/nvim/init.vim を書く
-:PlugInstall
+## vim-plugのintall
+cd ~/.config/nvim/init.vim を書く  
+:PlugInstall  
 
 
 ## coc.vim の使い方 
